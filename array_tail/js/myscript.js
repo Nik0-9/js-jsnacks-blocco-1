@@ -11,28 +11,29 @@ btn.addEventListener('click', function(){
     let numeri = [];
     let nElementi = parseInt(document.getElementById('input').value);
     console.log(nElementi);
-    let print = parseInt(document.getElementById('print').value);
+    let print = document.getElementById('elementToPrint').value;
     let output = document.getElementById('output');
-    let lastFive = '';
+    let error = document.getElementById('outputerror')
+    let lastEl = '';
 
-    for(i=0; i<nElementi; i++){
-        if(nElementi >= 5){
+    if(nElementi >= 5){
+        for(i=0; i < nElementi; i++){
         let load = getRndInteger(1,100);
         numeri.push(load);
+    }
     } else{
-        output.innerHTML = 'Devi inserire minimo 5';
+        error.innerHTML = 'L\'array deve avere minimo 5';
     }
-    }
+    
     console.log(numeri);
     if(print > 0 && print !== ''){
         for(i = nElementi - print; i < nElementi; i++){
             console.log(numeri[i]);
-            lastFive += ` ${numeri[i]}`;
+            lastEl += ` ${numeri[i]}`;
         }
     } else{
-        output.innerHTML = 'inserire un numero valido nel campo elementi da stampare:'
+        error.innerHTML = 'inserire un numero valido nel campo elementi da stampare:'
     }
-    
-    output.innerHTML = lastFive ;
+    output.innerHTML = lastEl;
     // output.innerHTML += numeri[i];
 })

@@ -14,11 +14,11 @@ if (ar1.length < ar2.length){
 }
 let add = 0;
 if(ar1.length !== ar2.length){
-    for(i=1; i <= diff; i++){
+    for(i=0; i < diff; i++){
         if(ar1.length > ar2.length){
-            ar2.push(getRndInteger(1,100));
+            ar2.push(getRndInteger(1,99));
         } else{
-            ar1.push(getRndInteger(1,100));
+            ar1.push(getRndInteger(1,99));
         }
     }
 }else{
