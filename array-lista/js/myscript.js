@@ -27,8 +27,11 @@ btn.addEventListener('click', function(){
     exist = false;
     let stampa = document.getElementById('output');
     let input = document.getElementById('frutta').value;
+    console.log(typeof input);
+    console.log(input.toLowerCase());
+
     for(i = 0; i <= frigorifero.length - 1; i++){
-        if(input === frigorifero[i]){
+        if(input.toLowerCase() === frigorifero[i]){
             exist = true;
         }
     } if(exist){
