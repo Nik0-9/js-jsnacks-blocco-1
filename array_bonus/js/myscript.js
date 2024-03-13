@@ -12,6 +12,9 @@ btn.addEventListener('click', function(){
     let ar2 = [];
     let diff = 0;
     console.log(ar1scan, ar2scan);
+    let printAr1 = document.getElementById('printArray1');
+    let printAr2 = document.getElementById('printArray2');
+    let result = document.getElementById('output');
 
 for(i=0; i<=ar1scan; i++){
     ar1.push(getRndInteger(1,90));
@@ -32,7 +35,9 @@ for(i=0; i<=ar2scan; i++){
     }
 }
 console.log('array1',ar1);
+printAr1.innerHTML = `${ar1}`;
 console.log('array2',ar2);
+printAr2.innerHTML = `${ar2}`;
 
 
 if (ar1.length < ar2.length){
@@ -48,13 +53,12 @@ if(ar1.length !== ar2.length){
         } else{
             ar1.push(getRndInteger(91,99));
         }
+        result.innerHTML = `Ho aggiunto ${diff} elementi compresi tra 91 e 99.<br>
+        array 1 ${ar1} <br>
+        array 2 ${ar2} <br>
+        `;
     }
-}else{
-
-    console.log('Gli array hanno lo stesso numero di elementi');
+}else{  
+    result.innerHTML = 'Gli array hanno lo stesso numero di elementi ';
 }
-
-console.log('differenza di elementi',diff);
-console.log('array1',ar1);
-console.log('array2',ar2);
 })
