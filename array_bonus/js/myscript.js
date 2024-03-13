@@ -18,6 +18,7 @@ btn.addEventListener('click', function(){
 
 for(i=0; i<=ar1scan; i++){
     ar1.push(getRndInteger(1,90));
+    //scarto elemnti uguali ad altri già contenuti nell'array1
     for(i=0; i<ar1.length; i++){
         if(ar1[i] === ar1[i - 1]){
             // console.log(ar1[i], ar1[i - 1]);
@@ -27,6 +28,7 @@ for(i=0; i<=ar1scan; i++){
 }
 for(i=0; i<=ar2scan; i++){
     ar2.push(getRndInteger(1,90));
+    //scarto elemnti uguali ad altri già contenuti nell'array1
     for(i=0; i<ar2.length; i++){
         if(ar2[i] === ar2[i - 1]){
             //console.log(ar1[i], ar1[i - 1]);

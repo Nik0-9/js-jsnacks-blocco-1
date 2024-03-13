@@ -34,6 +34,8 @@ btn.addEventListener('click', function(){
     } else{
         error.innerHTML = 'inserire un numero valido nel campo elementi da stampare:'
     }
-    output.innerHTML = lastEl;
+    if(nElementi > 5){
+        output.innerHTML = lastEl;
+    }
     // output.innerHTML += numeri[i];
 })
