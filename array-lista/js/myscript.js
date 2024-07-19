@@ -7,37 +7,34 @@ Stasera dobbiamo fare un cocktail a base di cocomero: ce l'abbiamo o no in frigo
    - se non lo trovo: "Oh no, devo uscire a comprare il cocomero!"
 */
 
-let btn = document.querySelector('.btn.btn-primary');
+let btnSearch = document.querySelector('.btn.btn-primary');
 
-btn.addEventListener('click', function(){
+
+btnSearch.addEventListener('click', function(){
     let frigorifero = [
-        'banana',
-        'mela',
-        'pera',
-        'ciliegia',
-        'arancia',
-        'mandarino',
-        'cocomero',
-        'limone',
+        'banana' ,
+        'mela' ,
+        'pera' ,
+        'ciliegia' ,
+        'arancia' ,
+        'mandarino' ,
+        'cocomero' ,
+        'limone' ,
         'fragola'
     ];
-    let addFruit = 'pesca';
-    frigorifero.push(addFruit);
-    console.log(frigorifero);
+    let printFridge = document.getElementById('fridge');
+    printFridge.innerHTML = `${frigorifero}`;
+    let partyFruit = document.getElementById('partyFruit').value;
     exist = false;
     let stampa = document.getElementById('output');
-    let input = document.getElementById('frutta').value;
-    console.log(typeof input);
-    console.log(input.toLowerCase());
-
     for(i = 0; i <= frigorifero.length - 1; i++){
-        if(input.toLowerCase() === frigorifero[i]){
+        if(partyFruit.toLowerCase() === frigorifero[i]){
             exist = true;
         }
     } if(exist){
-        stampa.innerHTML = 'Trovato! Devo solo preparare il cocktail.'
+        stampa.innerHTML = `Trovato! Devo solo preparare il cocktail a base di ${partyFruit}.`
     } else{
-        stampa.innerHTML = 'Oh no, devo uscire a comprare il cocomero!'
+        stampa.innerHTML = `Oh no, devo uscire a comprare il ${partyFruit}!`
     }
 })
 
